@@ -65,8 +65,13 @@
     from { transform:translateX(-50%) translateY(5px) rotate(-5deg); }
     to { transform:translateX(-50%) translateY(-12px) rotate(5deg); }
   }
-  .panda-message { position:absolute; bottom:215px; left:50%; width:280px; padding:10px 14px; box-sizing:border-box; border:3px solid #ff9fba; border-radius:18px; background:#fff7fb; color:#8d3154; font-size:13px; font-weight:800; line-height:1.35; text-align:center; opacity:0; transform:translateX(-50%) scale(0.6) rotate(-4deg); z-index:6; }
-  .panda-message.show { animation:messagePop 0.8s ease-out forwards; }
+  .panda-message { position:absolute; bottom:215px; left:50%; width:calc(100vw - 32px); max-width:280px; padding:10px 14px; box-sizing:border-box; border:3px solid #ff9fba; border-radius:18px; background:#fff7fb; color:#8d3154; font-size:13px; font-weight:800; line-height:1.35; text-align:center; opacity:0; transform:translateX(-50%) scale(0.6) rotate(-4deg); z-index:6; }
+  .panda-message.show { animation:pandaMessagePop 0.8s ease-out forwards; }
+  @keyframes pandaMessagePop {
+    0% { opacity:0; transform:translateX(-50%) scale(0.6) rotate(-4deg); }
+    70% { opacity:1; transform:translateX(-50%) scale(1.08) rotate(2deg); }
+    100% { opacity:1; transform:translateX(-50%) scale(1) rotate(0); }
+  }
   .tap-btn { margin-top: 25px; z-index:20; padding: 14px 32px; font-size: 17px; font-weight: 800; background: #ffcc33; border:none; border-radius: 50px; cursor:pointer; }
 </style>
 </head>
